@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/add_cash.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Add Cash{% endblock %}
+
+{% block money %}
+    {% if user_cash != 0 %}
+        Cash:
+        <i class="fas fa-coins"></i>
+        {{ user_cash }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="h3 mb-3 font-weight-normal">Current Amount of Cash: ${{ user_cash }}</h1>
+    <hr>
+    <form action="/add_cash" method="post">
+        <div class="form-group">
+            <label for="added_cash">Cash To Be Add: </label>
+            <input autocomplete="off" class="form-control" name="added_cash" id="added_cash" placeholder="Add Cash" type="text">
+        </div>
+        <button class="btn btn-sm btn-block btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

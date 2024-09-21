@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<link href="{{ url_for('static', filename='styles/index.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Market{% endblock %}
+
+{% block money %}
+    {% if user_cash != 0 %}
+        Cash:
+        <i class="fas fa-coins"></i>
+        {{ user_cash }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row g-3">
+            {% for product in market_info %}
+                <div class="col-12 col-md-6 col-xl-3 mb-5">
+                    <div class="card">
+                        <img class="card-img-top" src="static/images/{{ product["name"] }}.jpg" alt="{{product["name"]}}" width="640" height="640">
+                        <hr>
+                        <div class="card-body">
+                            <h6>{{ product["name"] }}</h6>
+                            <p>Price: $ {{ product["price"] }}</p>
+                        </div>
+
+                        <div class="card-footer px-3 text-center">
+                            <a href="{{ url_for('add_to_cart', product=product["name"])}}" class="btn btn-warning" role="button">Add to Cart</a>
+                            <a href="{{ url_for('single_product', product=product["name"])}}" class="btn btn-info" role="button">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
