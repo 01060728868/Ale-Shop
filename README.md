@@ -51,6 +51,10 @@ If admin click the button 'update' in the dashboard, then it will goes to the pa
 Admin can also add product to the database by input relevant information based on the form 
 ![image](https://user-images.githubusercontent.com/78290169/168472575-ddf7cdc2-ce4e-4f18-8e73-3d1a8106c9bc.png)
 
+## Demonstration on youtube
+For the CS50 final project you have to make a video showning your project,
+[My Final Project presentation](https://youtube.com/shorts/XC_94mpBrZc?si=BHSGfwZssjx54xje)
+
 ## Reference:
 - <a href="https://youtu.be/Qr4QMBUPxWo">Flask Course - Python Web Application Development</a> (Inspiration from this video and take reference about the page design)
 - Logo Design from <a href="https://www.freelogodesign.org/">FreeLogo Design</a>
